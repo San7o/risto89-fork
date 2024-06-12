@@ -16,7 +16,7 @@
      */
     function goEvento(titolo) {
         const url = '/risto89-1.0/evento?titolo=';
-        var encoded = encodeURI(url + titolo);
+        var encoded = encodeURI(url + titolo + "&jsessionid=" + '<%= request.getSession().getId() %>' );
         console.log(encoded);
         window.location.replace(encoded);
     }
